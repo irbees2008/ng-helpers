@@ -310,6 +310,10 @@ $result = value(function () {
 ```php
 use function Plugins\view;
 
+$context = [
+    'key' => 'value'
+];
+
 return view($template, $context);
 ```
 
