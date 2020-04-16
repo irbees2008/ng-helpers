@@ -10,10 +10,10 @@ File: src/helpers.php
 Preinstall: default_yes
 Acts: core
 
-Title: РҐРµР»РїРµСЂС‹ NGCMS
-Name: РҐРµР»РїРµСЂС‹ NGCMS
-Description: РљРѕР»Р»РµРєС†РёСЏ РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹С… С„СѓРЅРєС†РёР№ РґР»СЏ РїР»Р°РіРёРЅРѕРІ СЃРёСЃС‚РµРјС‹ NGCMS.
-Information: РљРѕР»Р»РµРєС†РёСЏ РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅС‹С… С„СѓРЅРєС†РёР№ РґР»СЏ РїР»Р°РіРёРЅРѕРІ СЃРёСЃС‚РµРјС‹ NGCMS.
+Title: Хелперы NGCMS
+Name: Хелперы NGCMS
+Description: Коллекция вспомогательных функций для плагинов системы NGCMS.
+Information: Коллекция вспомогательных функций для плагинов системы NGCMS.
 
 Author: rusiq
 Author_URI: https://github.com/russsiq
