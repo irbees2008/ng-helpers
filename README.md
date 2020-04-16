@@ -8,6 +8,11 @@
 
 ### Подключение
 
+Плагин выпускается в двух вариациях, каждая из которых поддерживает свой тип кодировки: UTF-8 и Windows-1251. Для подключения вы можете просто скачать плагин в необходимой для вашего проекта кодировке:
+
+ - [UTF-8](https://codeload.github.com/russsiq/ng-helpers/zip/master)
+ - [Windows-1251](https://codeload.github.com/russsiq/ng-helpers/zip/windows-1251)
+
 ### Настройка
 
 ### Использование
