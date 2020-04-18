@@ -13,9 +13,21 @@
  - [UTF-8](https://codeload.github.com/russsiq/ng-helpers/zip/master)
  - [Windows-1251](https://codeload.github.com/russsiq/ng-helpers/zip/windows-1251)
 
+Либо воспользуйтесь менеджером Composer:
+
+```bash
+composer require russsiq/ng-helpers:dev-master
+```
+
+> Обратите внимание, что кодировка UTF-8 является основной. Вы можете указать кодировку Windows-1251:
+
+```bash
+composer require russsiq/ng-helpers:dev-windows-1251
+```
+
 ### Настройка
 
-В данный момент плагин не имеет настроек.
+В данный момент плагин не имеет настроек, но активация плагина в панели управления является обязательной.
 
 ### Использование
 
