@@ -258,12 +258,33 @@ $currentPage = (int) request('page', 1);
 ```php
 use function Plugins\setting;
 
+// Получить настройку плагина.
 $value = setting($plugin, 'key', 'default');
+
+// Задать массив настроек плагина.
+setting($plugin, [
+    'key' => 'value',
+    'another_key' => 'another_value'
+]);
+```
+
+Примеры использования:
+
+```php
+// Получить настройку плагина.
+$cacheExpire = (int) setting($plugin, 'cacheExpire', 60);
 ```
 
 ```php
-// Пример использования.
-$cacheExpire = (int) setting($plugin, 'cacheExpire', 60);
+// Задать массив настроек плагина.
+setting($plugin, [
+    // Использовать кеширование данных.
+    'cache' => 0,
+
+    // Период обновления кеша.
+    'cacheExpire' => 60,
+
+]);
 ```
 
 <a name="method-starts_with"></a>
