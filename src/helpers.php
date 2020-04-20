@@ -4,11 +4,12 @@ namespace Plugins;
 
 // Базовые расширения PHP.
 use Closure;
+use stdClass;
 
 /**
  * Коллекция вспомогательных функций для плагинов системы NGCMS.
  *
- * @version: 0.1.0 от 2020-04-16
+ * @version: 0.1.1 от 2020-04-20
  * @author: https://github.com/russsiq
  *
  * array_dotset - Установить значение элементу массива, используя «точечную» нотацию.
@@ -37,7 +38,7 @@ if (! function_exists(__NAMESPACE__.'\array_dotset')) {
      *
      * @source Illuminate\Support\Arr
      */
-    function array_dotset(&$array, $key, $value)
+    function array_dotset(&$array, $key, $value): array
     {
         if (is_null($key)) {
             return $array = $value;
@@ -112,7 +113,7 @@ if (! function_exists(__NAMESPACE__.'\catz')) {
      * @param  int|null  $id  Идентификатор категории.
      * @return array
      */
-    function catz(int $id = null)
+    function catz(int $id = null): array
     {
         global $catz;
 
@@ -165,7 +166,7 @@ if (! function_exists(__NAMESPACE__.'\dd')) {
      * @param  mixed  $vars
      * @return void
      */
-    function dd(...$vars)
+    function dd(...$vars): void
     {
         $style = 'style="
             background-color: #23241f;
@@ -198,7 +199,7 @@ if (! function_exists(__NAMESPACE__.'\pageInfo')) {
      * @param  mixed  $info
      * @return void
      */
-    function pageInfo(string $section, $info)
+    function pageInfo(string $section, $info): void
     {
         global $SYSTEM_FLAGS;
 
@@ -262,7 +263,7 @@ if (! function_exists(__NAMESPACE__.'\starts_with')) {
      * @param  string|array  $needles
      * @return bool
      */
-    function starts_with($haystack, $needles)
+    function starts_with($haystack, $needles): bool
     {
         foreach ((array) $needles as $needle) {
             if ($needle !== '' && substr($haystack, 0, strlen($needle)) === (string) $needle) {
@@ -280,7 +281,7 @@ if (! function_exists(__NAMESPACE__.'\trans')) {
     * @param  string  $key
     * @return string
     */
-   function trans(string $key)
+   function trans(string $key): string
    {
        global $lang;
 
@@ -307,7 +308,7 @@ if (! function_exists(__NAMESPACE__.'\view')) {
      * @param  array  $context  Массив передаваемых параметров шаблону.
      * @return string
      */
-    function view(string $name, array $context = [], array $mergeData = [])
+    function view(string $name, array $context = [], array $mergeData = []): string
     {
         global $twig;
 
