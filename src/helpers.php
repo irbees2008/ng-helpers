@@ -6,6 +6,9 @@ namespace Plugins;
 use Closure;
 use stdClass;
 
+// Сторонние зависимости.
+use Twig_Environment;
+
 /**
  * Коллекция вспомогательных функций для плагинов системы NGCMS.
  *
@@ -304,9 +307,15 @@ if (! function_exists(__NAMESPACE__.'\value')) {
 if (! function_exists(__NAMESPACE__.'\view')) {
     /**
      * Выводит шаблон с заданным контекстом и возвращает его в виде строки.
+     *
+     * @see Twig_Environment::render()
+     * @global Twig_Environment  $twig
+     *
      * @param  string  $name  Имя шаблона.
      * @param  array  $context  Массив передаваемых параметров шаблону.
      * @return string
+     *
+     *
      */
     function view(string $name, array $context = [], array $mergeData = []): string
     {
