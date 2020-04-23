@@ -73,4 +73,16 @@ trait Renderable
 
         return $path.$file;
     }
+
+    /**
+     * Выводит шаблон с заданным контекстом и возвращает его в виде строки.
+     * @param  string  $name
+     * @param  array  $context
+     * @param  array  $mergeData
+     * @return string
+     */
+    protected function view(string $name, array $context = [], array $mergeData = [])
+    {
+        return view($this->template($name), $context, $mergeData);
+    }
 }
