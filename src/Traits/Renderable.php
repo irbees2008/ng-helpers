@@ -16,14 +16,6 @@ trait Renderable
     protected $localsource;
 
     /**
-     * Имена всех шаблонов плагина.
-     * @var array
-     */
-    protected $templates = [
-
-    ];
-
-    /**
      * Список файлов шаблонов с полными путями, исключая имя шаблона.
      * @var array
      */
