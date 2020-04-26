@@ -56,7 +56,7 @@ trait Renderable
      * @param  string  $filename
      * @return string
      */
-    protected function template(string $filename)
+    protected function template(string $filename): string
     {
         $path = $this->templatePath($filename);
         $file = $filename.'.tpl';
@@ -69,7 +69,7 @@ trait Renderable
      * @param  string  $filename
      * @return string
      */
-    protected function asset(string $filename)
+    protected function asset(string $filename): string
     {
         $path = $this->templatePath('url:'.$filename);
         $file = '/'.substr($filename, 1);
@@ -83,7 +83,7 @@ trait Renderable
      * @param  mixed  $args
      * @return string
      */
-    protected function view(string $name, ...$args)
+    protected function view(string $name, ...$args): string
     {
         return view($this->template($name), ...$args);
     }
