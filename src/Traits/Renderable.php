@@ -2,19 +2,15 @@
 
 namespace Plugins\Traits;
 
+// Исключения.
+use RuntimeException;
+
 // Используем функции из пространства `Plugins`.
+use function Plugins\setting;
 use function Plugins\view;
 
 trait Renderable
 {
-    /**
-     * Расположение шаблонов плагина.
-     *  - `0` - шаблон сайта;
-     *  - `1` - директория плагина.
-     * @var int
-     */
-    protected $localsource;
-
     /**
      * Список файлов шаблонов с полными путями, исключая имя шаблона.
      * @var array
@@ -23,23 +19,30 @@ trait Renderable
 
     /**
      * Определить все пути к файлам шаблонов.
-     * @return array
+     * @param  bool  $localsource  Расположение файлов шаблона в директории плагина.
+     *      - `false` - шаблон сайта;
+     *      - `true` - директория плагина.
+     * @param  string|null  $skin
+     * @return void
      */
-    protected function findTemplates(string $localsource, string $skin = null)
+    protected function defineTemplatePaths(bool $localsource, string $skin = null): void
     {
-        if (is_null($skin)) {
-            return locatePluginTemplates($this->templates, $this->plugin, $localsource);
-        }
-
-        return locatePluginTemplates($this->templates, $this->plugin, $localsource, $skin);
+        $this->templatePath = locatePluginTemplates(
+            $this->templates,
+            $this->plugin,
+            $localsource,
+            $skin
+        );
     }
 
     /**
      * Получить путь к файлу шаблона.
      * @param  string  $tpl
      * @return string
+     *
+     * @throws RuntimeException
      */
-    protected function templatePath(string $tpl)
+    protected function templatePath(string $tpl): string
     {
         if (empty($path = $this->templatePath[$tpl])) {
             throw new RuntimeException("Template [{$tpl}] is not define.");
@@ -77,12 +80,11 @@ trait Renderable
     /**
      * Выводит шаблон с заданным контекстом и возвращает его в виде строки.
      * @param  string  $name
-     * @param  array  $context
-     * @param  array  $mergeData
+     * @param  mixed  $args
      * @return string
      */
-    protected function view(string $name, array $context = [], array $mergeData = [])
+    protected function view(string $name, ...$args)
     {
-        return view($this->template($name), $context, $mergeData);
+        return view($this->template($name), ...$args);
     }
 }
