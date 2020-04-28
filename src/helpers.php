@@ -7,12 +7,13 @@ use Closure;
 use stdClass;
 
 // Сторонние зависимости.
+use _mysqli;
 use Twig_Environment;
 
 /**
  * Коллекция вспомогательных функций для плагинов системы NGCMS.
  *
- * @version: 0.1.1 от 2020-04-20
+ * @version: 0.1.2 от 2020-04-27
  * @author: https://github.com/russsiq
  *
  * array_dotset - Установить значение элементу массива, используя «точечную» нотацию.
@@ -118,6 +119,9 @@ if (! function_exists(__NAMESPACE__.'\catz')) {
      */
     function catz(int $id = null): array
     {
+        /**
+         * @var  array  $catz
+         */
         global $catz;
 
         if (is_null($id)) {
@@ -143,6 +147,9 @@ if (! function_exists(__NAMESPACE__.'\config')) {
      */
     function config(string $key, $default = null)
     {
+        /**
+         * @var  array  $config
+         */
         global $config;
 
         return array_key_exists($key, $config) ? $config[$key] : value($default);
@@ -156,6 +163,9 @@ if (! function_exists(__NAMESPACE__.'\database')) {
      */
     function database()
     {
+        /**
+         * @var  _mysqli  $mysql
+         */
         global $mysql;
 
         return $mysql;
@@ -204,6 +214,9 @@ if (! function_exists(__NAMESPACE__.'\pageInfo')) {
      */
     function pageInfo(string $section, $info): void
     {
+        /**
+         * @var  array  $SYSTEM_FLAGS
+         */
         global $SYSTEM_FLAGS;
 
         array_dotset($SYSTEM_FLAGS, $section, $info);
@@ -237,6 +250,9 @@ if (! function_exists(__NAMESPACE__.'\setting')) {
      */
     function setting(string $plugin, $variety, $default = null)
     {
+        /**
+         * @var  array  $PLUGINS
+         */
         global $PLUGINS;
 
         if (pluginsLoadConfig()) {
@@ -286,6 +302,9 @@ if (! function_exists(__NAMESPACE__.'\trans')) {
     */
    function trans(string $key): string
    {
+       /**
+        * @var  array  $lang
+        */
        global $lang;
 
        return array_key_exists($key, $lang) ? $lang[$key] : $key;
@@ -309,13 +328,14 @@ if (! function_exists(__NAMESPACE__.'\view')) {
      * Выводит шаблон с заданным контекстом и возвращает его в виде строки.
      * @param  string  $name  Имя шаблона.
      * @param  array  $context  Массив передаваемых параметров шаблону.
+     * @param  array  $mergeData  Массив дополнительных параметров.
      * @return string
-     *
-     * @see Twig_Environment::render()
-     * @global Twig_Environment  $twig
      */
     function view(string $name, array $context = [], array $mergeData = []): string
     {
+        /**
+         * @var  Twig_Environment  $twig
+         */
         global $twig;
 
         return $twig->render($name, array_merge($context, $mergeData));
