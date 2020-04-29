@@ -10,6 +10,7 @@ File: src/helpers.php
 Preinstall: default_yes
 Acts: core
 Library: renderable; src/Traits/Renderable.php
+Permanent: yes
 
 Title: Хелперы NGCMS
 Name: Хелперы NGCMS
