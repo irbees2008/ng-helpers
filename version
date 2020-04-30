@@ -5,19 +5,17 @@
 ID: ng-helpers
 Type: plugin
 Version: 0.1.1
-Permanent: yes
 
 File: src/helpers.php
-
+Preinstall: default_yes
 Acts: core
 Library: renderable; src/Traits/Renderable.php
-
-Name: Хелперы NGCMS
-Description: Коллекция вспомогательных функций для плагинов системы NGCMS.
+Permanent: yes
 
 Title: Хелперы NGCMS
+Name: Хелперы NGCMS
+Description: Коллекция вспомогательных функций для плагинов системы NGCMS.
 Information: Коллекция вспомогательных функций для плагинов системы NGCMS.
-Preinstall: default_yes
 
 Author: rusiq
 Author_URI: https://github.com/russsiq
