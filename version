@@ -5,12 +5,12 @@
 ID: ng-helpers
 Type: plugin
 Version: 0.1.1
+Permanent: yes
+Preinstall: default_yes
 
 File: src/helpers.php
-Preinstall: default_yes
 Acts: core
 Library: renderable; src/Traits/Renderable.php
-Permanent: yes
 
 Title: Хелперы NGCMS
 Name: Хелперы NGCMS
