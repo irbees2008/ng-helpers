@@ -4,26 +4,26 @@
 
 Перед использованием плагина вам необходимо убедиться, что ваш сервер соответствует следующим требованиям:
 
- - PHP >= 7.0.0
+ - PHP ^7.3|^8.0
 
 ### Подключение
 
 Плагин выпускается в двух вариациях, каждая из которых поддерживает свой тип кодировки: UTF-8 и Windows-1251. Для подключения вы можете просто скачать плагин в необходимой для вашего проекта кодировке:
 
- - [UTF-8](https://codeload.github.com/russsiq/ng-helpers/zip/master)
- - [Windows-1251](https://codeload.github.com/russsiq/ng-helpers/zip/windows-1251)
+ - [UTF-8](https://codeload.github.com/irbees2008/ng-helpers/zip/master)
+ - [Windows-1251](https://codeload.github.com/irbees2008/ng-helpers/zip/windows-1251)
 
 Либо воспользуйтесь менеджером Composer:
 
 ```bash
-composer require russsiq/ng-helpers:dev-master
+composer require irbees2008/ng-helpers
 ```
 
-> Обратите внимание, что кодировка UTF-8 является основной. Вы можете указать кодировку Windows-1251:
+> Обратите внимание, что кодировка UTF-8 является основной.
 
-```bash
+<!-- ```bash
 composer require russsiq/ng-helpers:dev-windows-1251
-```
+``` -->
 
 ### Настройка
 
@@ -352,4 +352,4 @@ return view($template, $context);
 
 ### Лицензия
 
-`ng-helpers` - программное обеспечение с открытым исходным кодом, распространяющееся по лицензии [MIT](https://choosealicense.com/licenses/mit/).
+`ng-helpers` - программное обеспечение с открытым исходным кодом, распространяющееся по лицензии [MIT](LICENSE).

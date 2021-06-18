@@ -85,6 +85,12 @@ trait Renderable
      */
     protected function view(string $name, ...$args): string
     {
+
+        // Определить все пути к шаблонам.
+        $this->defineTemplatePaths(
+            (bool) setting($this->plugin, 'localsource', 0)
+        );
+
         return view($this->template($name), ...$args);
     }
 }
